@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.dyj</groupId>
-  <artifactId>spring-1.0</artifactId>
+  <artifactId>spring-2.0-ioc</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>spring-1.0</name>
+  <name>spring-2.0-ioc</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -34,11 +34,24 @@
       <version>${servlet.api.version}</version>
       <scope>provided</scope>
     </dependency>
+    <!-- requied end -->
 
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.62</version>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
     </dependency>
   </dependencies>
 
@@ -110,7 +123,7 @@
           <contextPath>/</contextPath>
           <connectors>
             <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-              <port>8080</port>
+              <port>80</port>
             </connector>
           </connectors>
           <scanIntervalSeconds>0</scanIntervalSeconds>
@@ -172,11 +185,6 @@
               <includes>
                 <include>**/*.*</include>
               </includes>
-              <!-- <excludes>
-                  <exclude>**/local</exclude>
-                  <exclude>**/test</exclude>
-                  <exclude>**/product</exclude>
-              </excludes> -->
               <filtering>true</filtering>
             </resource>
             <resource>
@@ -202,7 +210,6 @@
         </executions>
         <version>1.0.5</version>
       </plugin>
-
     </plugins>
     <pluginManagement>
       <plugins>
