@@ -1,4 +1,4 @@
-package com.dyj.invokeall.student;
+package com.dyj.batchhamdle;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,6 @@ import java.util.List;
 public class StudentEntity {
 
     private List<String> names;
-    private List<Integer> ages;
+    private List<String> alisNames;
     private String className;
 }

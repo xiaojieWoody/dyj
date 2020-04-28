@@ -1,7 +1,8 @@
-package com.dyj.invokeall.student;
+package com.dyj.batchhamdle;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -18,18 +19,14 @@ public class StudentCallable implements Callable<StudentEntity> {
 
     @Override
     public StudentEntity call() throws Exception {
-//        StudentEntity result = new StudentEntity();
-
-        List<Integer> ages = studentEntity.getAges();
-        String className = studentEntity.getClassName();
+        Thread.sleep(200);
         List<String> names = studentEntity.getNames();
-        log.error("----------------------ClassName:{}", className);
-        for( int i = 0; i < names.size(); i++) {
-            log.error("---------name:{}", names.get(i));
-            log.error("---------age:{}", ages.get(i));
+        List<String> aliasNames = new ArrayList<>();
+        for (String name : names) {
+            aliasNames.add(name);
         }
-
-//        result.setClassName(className);
+        studentEntity.setAlisNames(aliasNames);
+        log.info("-------------{}",studentEntity.getClassName());
         return studentEntity;
     }
 }
