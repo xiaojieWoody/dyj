@@ -7,7 +7,12 @@
         <module>test</module>
 		<module>spring-1.0</module>
 		<module>spring-2.0-ioc</module>
-	</modules>
+<!--		<module>..</module>-->
+		<module>spring-2.0-test</module>
+		<module>thread-demo</module>
+		<module>normal_project</module>
+        <module>dyj-common</module>
+    </modules>
 
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -32,6 +37,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!--自定义工具包-->
+		<dependency>
+			<groupId>com.dyj</groupId>
+			<artifactId>dyj-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
 		</dependency>
 
 		<dependency>
