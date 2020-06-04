@@ -1,0 +1,15 @@
+server:
+  port: 6666
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: IamMySQL0108
+    url: jdbc:mysql://127.0.0.1:3306/imooc_boot_scala?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+  jpa:
+    hibernate:
+      # 自动建表
+      ddl-auto: update
+    database: mysql
+    open-in-view: true
